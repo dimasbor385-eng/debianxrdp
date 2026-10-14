@@ -31,6 +31,8 @@ RUN echo "startxfce4" > /root/.xsession && chmod 700 /root/.xsession
 
 # Generate machine-id for dbus
 RUN mkdir -p /var/run/dbus && dbus-uuidgen > /var/lib/dbus/machine-id
+RUN echo "xfce4-session" > /etc/skel/.xsession
+RUN echo "xfce4-session" > /root/.xsession
 
 RUN sed -i 's/crypt_level=high/crypt_level=low/' /etc/xrdp/xrdp.ini && \
     sed -i 's/security_layer=negotiate/security_layer=rdp/' /etc/xrdp/xrdp.ini && \
