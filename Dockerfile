@@ -2,7 +2,8 @@ FROM debian:forky
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN dpkg --add-architecture i386
+RUN sudo dpkg --add-architecture i386
+RUN sudo apt update
 
 RUN apt update && apt install -y \
     xrdp \
