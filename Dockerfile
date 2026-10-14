@@ -20,6 +20,7 @@ RUN apt update && apt install -y \
     pkexec \
     pulseaudio-utils \
     firefox-esr && \
+    pulseaudio \
     apt clean && rm -rf /var/lib/apt/lists/*
 
 # Set root password
