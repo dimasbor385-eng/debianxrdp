@@ -18,11 +18,7 @@ RUN apt update && apt install -y \
     net-tools \
     polkitd \
     pkexec \
-    xrdp-pulseaudio-installer -y \
     pulseaudio-utils \
-    wine64 \
-    wine \
-    wine32 \
     firefox-esr && \
     apt clean && rm -rf /var/lib/apt/lists/*
 
