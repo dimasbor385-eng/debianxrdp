@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:forky
 
 ENV DEBIAN_FRONTEND=noninteractive
 
