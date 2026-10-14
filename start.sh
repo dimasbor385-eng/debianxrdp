@@ -1,5 +1,8 @@
 #!/bin/bash
 
+docker build -t xrdp .
+docker run -d -p 3389:3389 -v xrdp-root-home:/root --name xrdp-root-wine-audio xrdp
+
 service dbus start
 pulseaudio --start --system --disallow-exit --disable-shm
 service xrdp start
