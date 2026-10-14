@@ -18,7 +18,7 @@ RUN apt update && apt install -y \
     net-tools \
     polkitd \
     pkexec \
-    pulseaudio \
+    xrdp-pulseaudio-installer -y \
     pulseaudio-utils \
     wine64 \
     wine \
