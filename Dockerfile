@@ -16,9 +16,11 @@ RUN apt update && apt install -y \
     wget \
     nano \
     net-tools \
-    policykit-1 \
+    polkitd \
+    pkexec \
     pulseaudio \
     pulseaudio-utils \
+    wine64 \
     wine \
     wine32 \
     firefox-esr && \
