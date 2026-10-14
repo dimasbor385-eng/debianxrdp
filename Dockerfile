@@ -1,5 +1,4 @@
 FROM debian:forky
-
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN dpkg --add-architecture i386
@@ -26,13 +25,13 @@ RUN apt update && apt install -y \
 RUN echo "root:wafahosting256GB" | chpasswd
 
 RUN sed -i 's/^allowed_users=.*/allowed_users=anybody/' /etc/X11/Xwrapper.config || echo "allowed_users=anybody" >> /etc/X11/Xwrapper.config
+RUN echo "xfce4-session" > /etc/skel/.xsession
+RUN echo "xfce4-session" > /root/.xsession
 
 RUN echo "startxfce4" > /root/.xsession && chmod 700 /root/.xsession
 
 # Generate machine-id for dbus
 RUN mkdir -p /var/run/dbus && dbus-uuidgen > /var/lib/dbus/machine-id
-RUN echo "xfce4-session" > /etc/skel/.xsession
-RUN echo "xfce4-session" > /root/.xsession
 
 RUN sed -i 's/crypt_level=high/crypt_level=low/' /etc/xrdp/xrdp.ini && \
     sed -i 's/security_layer=negotiate/security_layer=rdp/' /etc/xrdp/xrdp.ini && \
