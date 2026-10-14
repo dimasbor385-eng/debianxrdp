@@ -1,5 +1,11 @@
 #!/bin/bash
 
+rm -f /var/run/xrdp/xrdp.pid
+rm -f /var/run/xrdp/xrdp-sesman.pid
+
+mkdir -p /var/run/dbus
+dbus-daemon --system --fork
+
 service dbus start
 pulseaudio --start --system --disallow-exit --disable-shm
 service xrdp start
