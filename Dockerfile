@@ -23,7 +23,7 @@ RUN apt update && apt install -y \
     apt clean && rm -rf /var/lib/apt/lists/*
 
 # Set root password
-RUN echo "root:root" | chpasswd
+RUN echo "nexovative:ragdolls112" | chpasswd
 
 RUN sed -i 's/^allowed_users=.*/allowed_users=anybody/' /etc/X11/Xwrapper.config || echo "allowed_users=anybody" >> /etc/X11/Xwrapper.config
 
